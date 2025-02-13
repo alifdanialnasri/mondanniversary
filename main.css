@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  font-family: 'Arial', sans-serif;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+}
+
+.heart-container {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.heart {
+  fill: #ff4b6e;
+  transform-origin: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.message {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 1rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.btn {
+  background: #ff4b6e;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  background: #ff3356;
+  transform: scale(1.05);
+}
+
+.btn.no {
+  background: #666;
+}
+
+.btn.no:hover {
+  background: #555;
+}
+
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.question {
+  display: none;
+}
+
+.question.active {
+  display: block;
+}
+
+.no-btn-container {
+  position: relative;
+}
+
+.no-btn-container .btn.no {
+  position: relative;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+@keyframes dodge {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(100px); }
+  100% { transform: translateX(0); }
+}
+
+.sparkle {
+  fill: #ffd700;
+  animation: sparkle 1s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.broken-heart {
+  display: none;
+  fill: #666;
+}
+
+
+body{
+  margin:0;
+  background-color: #ffecc6;
+}
+*{
+  box-sizing: border-box;
+}
+.book-section{
+  height: 100vh;
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+}
+.book-section > .container{
+  height: 400px;
+  width: 500px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2%;
+  margin-bottom: 30px;
+  perspective: 1200px;
+}
+.container > .right{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  transition: 0.7s ease-in-out;
+  transform-style: preserve-3d;
+}
+.book-section > .container > .right{
+  right:0;
+  transform-origin: left;
+  border-radius: 10px 0 0 10px;
+}
+.right > figure.front, .right > figure.back{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-color: white;
+  overflow: hidden;
+}
+.right > figure.front{
+  background-position: right;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 15px -2px rgba(0,0,0,0.2);
+}
+.right > figure.back{
+  background-position: left;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -2px 2px 15px -2px rgba(0,0,0,0.2);
+  transform: rotateY(180deg);
+}
+.flip{
+  transform: rotateY(-180deg);
+}
+.flip::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  background-color: rgba(0,0,0,0.1);
+}
+.book-section > button{
+  border: 2px solid #ef9f00;
+  background-color: transparent;
+  color: #ef9f00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s ease-in-out;
+}
+.book-section > button:focus, .book-section > button:active{
+  outline: none;
+}
+.book-section > p{
+  color: rgba(0,0,0,0.7);
+  font-family: calibri;
+  font-size: 24px;
+}
+.book-section > p > a{
+  text-decoration: none;
+  color: #ef9f00;
+}
+.book-section > button:hover{
+  background-color: #ef9f00;
+  color: #fff;
+}
+.front#cover, .back#back-cover{
+  background-color: #ffcb63;
+  font-family: calibri;
+  text-align: left;
+  padding: 0 30px;
+}
+.front#cover h1{
+  color: #fff;
+}
+.front#cover p{
+  color: rgba(0,0,0,0.8);
+  font-size: 14px;
+}
+
+.page#cover, .back#back-cover{
+  background-color: #ffff;
+  font-family: calibri;
+  text-align: left;
+  padding: 0 30px;
+}
+.page#cover h1{
+  color: #000;
+}
+.page#cover p{
+  color: rgba(0,0,0,0.8);
+  font-size: 14px;
+}
+
