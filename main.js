@@ -1,11 +1,11 @@
 let noButtonDodgeCount = 0;
 const maxDodges = 5;
 const messages = [
-  "You need to love me ❤️",
-  "Don't run away from me! 😢",
-  "Come on, just say yes! 🥰",
-  "I'm waiting for your love! 💕",
-  "Why are you hesitating? 😭"
+  "Kena sayang saya jugakkk ❤️",
+  "Sampai hati sayanggg 😢",
+  "Cepatla tekan yesss ada suprise nii 🥰",
+  "Sayang saya cepat!! 💕",
+  "Eeeee bakpo tekan Noo 😭"
 ];
 
 function nextQuestion(accepted, questionNumber) {
